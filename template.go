@@ -14,7 +14,7 @@ const (
 
 // Template struct is used to store template operations results
 //
-// see: https://www.zabbix.com/documentation/5.0/manual/api/reference/template/object
+// see: https://www.zabbix.com/documentation/5.4/manual/api/reference/template/object
 type Template struct {
 	TemplateID  string `json:"templateid,omitempty"`
 	Host        string `json:"host,omitempty"`
@@ -30,7 +30,7 @@ type Template struct {
 
 // TemplateTag struct is used to store template tag data
 //
-// see: https://www.zabbix.com/documentation/5.0/manual/api/reference/template/object#template_tag
+// see: https://www.zabbix.com/documentation/5.4/manual/api/reference/template/object#template_tag
 type TemplateTag struct {
 	Tag   string `json:"tag,omitempty"`
 	Value string `json:"value,omitempty"`
@@ -40,7 +40,7 @@ type TemplateTag struct {
 
 // TemplateGetParams struct is used for template get requests
 //
-// see: https://www.zabbix.com/documentation/5.0/manual/api/reference/template/get#parameters
+// see: https://www.zabbix.com/documentation/5.4/manual/api/reference/template/get#parameters
 type TemplateGetParams struct {
 	GetParameters
 
