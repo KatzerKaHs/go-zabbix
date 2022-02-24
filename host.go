@@ -29,12 +29,18 @@ type Host struct {
 	Macros []HostMacro `json:"macros,omitempty"`
 
 	// Groups contains all Host Groups assigned to the Host.
-	Groups []Hostgroup `json:"groups,omitempty"`
+	Groups            []Hostgroup     `json:"groups,omitempty"`
+	Tags              []HostTagObject `json:"tags,omitempty"`
+	MaintenanceStatus string          `json:"maintenance_status"`
+	MaintenanceID     string          `json:"maintenanceid"`
+	MaintenanceType   string          `json:"maintenance_type"`
+	MaintenanceFrom   string          `json:"maintenance_from"`
+}
+type HostTagObject struct {
+	Tag   string `json:"tag"`
+	Value string `json:"value,omitempty"`
 
-	MaintenanceStatus string `json:"maintenance_status"`
-	MaintenanceID     string `json:"maintenanceid"`
-	MaintenanceType   string `json:"maintenance_type"`
-	MaintenanceFrom   string `json:"maintenance_from"`
+	Operator int `json:"operator,omitempty"` // Used for `get` operations, has defined consts, see above
 }
 
 // HostGetParams represent the parameters for a `host.get` API call.
@@ -118,8 +124,8 @@ type HostGetParams struct {
 
 	SelectItems SelectQuery `json:"selectItems,omitempty"`
 
-	SelectMacros SelectQuery `json:"selectMacros,omitempty"`
-
+	SelectMacros          SelectQuery `json:"selectMacros,omitempty"`
+	SelectTags            SelectQuery `json:"selectTags,omitempty"`
 	SelectParentTemplates SelectQuery `json:"selectParentTemplates,omitempty"`
 	SelectScreens         SelectQuery `json:"selectScreens,omitempty"`
 	SelectTriggers        SelectQuery `json:"selectTriggers,omitempty"`
