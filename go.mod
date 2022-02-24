@@ -1,3 +1,3 @@
-module github.com/cavaliercoder/go-zabbix
+module github.com/KatzerKaHs/go-zabbix
 
-go 1.16
+go 1.17
